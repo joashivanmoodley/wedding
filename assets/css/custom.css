@@ -456,51 +456,7 @@ html {
   background: #DDBCB3;
   padding: 10px 15px;
 }
-#gallery {
-  width: 100%;
-  display: block;
-  position: relative;
-  box-sizing: border-box;
-  padding: 88px 0;
-  background: #EAE9E5;
-}
-#gallery .heading {
-  font-family: 'Alex Brush', cursive;
-  line-height: 61px;
-  font-size: 49px;
-  text-align: center;
-  color: #949599;
-  box-sizing: content-box;
-  padding: 0 15px 35px 15px;
-}
-#gallery .gallery-slider {
-  width: 94%;
-  height: 300px;
-  position: relative;
-  margin: 0 auto;
-}
-#gallery .gallery-slider .slider-item {
-  width: 100%;
-  height: 300px;
-  float: left;
-  position: relative;
-}
-#gallery .gallery-slider .slider-item .image1 {
-  width: 100%;
-  height: 300px;
-  background: #fff;
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-#gallery .gallery-slider .slider-item .image1 img {
-  position: absolute;
-  top: -9999px;
-  bottom: -9999px;
-  left: -9999px;
-  right: -9999px;
-  margin: auto;
-}
+
 .form_attend {
   width: 100%;
   position: relative;
@@ -984,44 +940,8 @@ html {
     width: 360px;
     vertical-align: middle;
   }
-  #gallery {
-    width: 100%;
-    display: block;
-    height: 753px;
-    position: relative;
-    box-sizing: border-box;
-    padding: 88px 0;
-    background: #EAE9E5;
-  }
-  #gallery .heading {
-    font-family: 'Alex Brush', cursive;
-    line-height: 61px;
-    font-size: 49px;
-    text-align: center;
-    color: #949599;
-    box-sizing: content-box;
-    padding: 0 0 35px 0;
-  }
-  #gallery .gallery-slider {
-    width: 940px;
-    height: 480px;
-    position: relative;
-    margin: 0 auto;
-  }
-  #gallery .gallery-slider .slider-item {
-    width: 940px;
-    height: 480px;
-    float: left;
-    position: relative;
-  }
-  #gallery .gallery-slider .slider-item .image1 {
-    width: 100%;
-    height: 100%;
-    background: #fff;
-    position: absolute;
-    top: 0;
-    left: 0;
-  }
+
+
   .form_attend {
     width: 100%;
     position: relative;
@@ -1117,3 +1037,5 @@ html {
     float: right;
   }
 }
+
+#gallery, .gallery-slider{max-height: 500px !important;padding:10px 0 !important;margin-top:20px !important; }

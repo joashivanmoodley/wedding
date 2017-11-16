@@ -32,6 +32,8 @@ var navScroll = {
     })
   },
   navDrop:function(){
+    var $headerHeight = 500;
+    $header = $('.navbar');
     var $scrollTop = $(window).scrollTop();
     if($scrollTop > $headerHeight){
       $header.addClass("scrolled");
