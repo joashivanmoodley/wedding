@@ -2,15 +2,39 @@
 from __future__ import unicode_literals
 
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect
 import qrcode
 from cStringIO import StringIO
+from guest.models import Guest
 # Create your views here.
 
 
+def confirmation(request):
+    template_data = {}
+    template = 'confirmation.html'
+    return render(request, template, template_data,)
+
+
 def rsvp(request, id):
+    guests = Guest.objects.filter(invite__invite_number=id)
     template_data = {
-        'id': id
+        'id': id,
+        'guests': guests
+    }
+    template = 'qr-scan.html'
+    if request.POST:
+        for guest in guests:
+            if 'attending_%s_%s' % (guest.first_name, guest.last_name) in request.POST:
+                guest.attending = True
+                guest.save()
+                return HttpResponseRedirect('/confirmation/')
+
+    return render(request, template, template_data,)
+
+
+def index(request, ):
+
+    template_data = {
     }
     template = 'index.html'
 

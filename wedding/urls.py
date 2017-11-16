@@ -16,8 +16,13 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 from guest import views
+from django.conf import settings
+from django.views.static import serve
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    url(r'^$', views.index),
+    url(r'^confirmation/$', views.confirmation),
     url(r'^rsvp/(?P<id>(\d+))/$', views.rsvp),
     url(r'^qr-code/$', views.create_qr_code),
+    url(r'^assets/(?P<path>.*)$', serve, {'document_root': settings.MEDIA_ROOT}),
 ]
